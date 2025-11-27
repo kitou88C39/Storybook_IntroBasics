@@ -111,3 +111,4 @@ If you encounter an issue with the template, we encourage you to open an issue i
 
 1. Read our introductory tutorial at [Learn Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/).
 2. See our official documentation at [Storybook](https://storybook.js.org/).
+# Storybook_IntroBasics
