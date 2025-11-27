@@ -1,4 +1,4 @@
-import Task from './Task.jsx';
+import Task from './Task';
 
 export default {
   Components: Task,
