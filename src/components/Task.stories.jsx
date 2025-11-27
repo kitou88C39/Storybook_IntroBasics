@@ -1,0 +1,16 @@
+import Task from './Task.jsx';
+
+export default {
+  Components: Task,
+  title: 'Task',
+};
+
+export const Default = {
+  args: {
+    task: {
+      id: '1',
+      title: 'test task',
+      state: 'TASK_INBOX',
+    },
+  },
+};
