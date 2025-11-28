@@ -1,3 +1,5 @@
+import PropType from 'prop-types';
+
 export default function Task({ task: { id, title, state } }) {
   return (
     <div className={`list-item ${state}`}>
@@ -23,3 +25,11 @@ export default function Task({ task: { id, title, state } }) {
     </div>
   );
 }
+
+Task.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  }),
+};
