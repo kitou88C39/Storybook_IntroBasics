@@ -4,6 +4,13 @@ import * as TaskStories from './Task.stories';
 export default {
   Components: TaskList,
   title: 'TaskList',
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '3rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Default = {
