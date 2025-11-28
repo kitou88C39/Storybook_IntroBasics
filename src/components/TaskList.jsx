@@ -13,11 +13,28 @@ export default function TaskList({ Loading, tasks }) {
   );
 
   if (Loading) {
-    return <div className='list-item'>Loading...</div>;
+    return (
+      <div className='list-items'>
+        {loadingRow}
+        {loadingRow}
+        {loadingRow}
+        {loadingRow}
+        {loadingRow}
+        {loadingRow}
+      </div>
+    );
   }
 
   if (tasks.length === 0) {
-    return <div className='list-item'>Empty...</div>;
+    return (
+      <div className='list-items'>
+        <div className='wrapper-message'>
+          <span className='icon-check' />
+          <p className='title-message'>You have no tasks</p>
+          <p className='subtitle-message'>Sit back and relax</p>
+        </div>
+      </div>
+    );
   }
   return (
     <div className='list-item'>
