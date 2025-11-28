@@ -1,4 +1,5 @@
 import Task from './Task';
+import PropType from 'prop-types';
 
 export default function TaskList({ Loading, tasks }) {
   const loadingRow = (
@@ -44,3 +45,12 @@ export default function TaskList({ Loading, tasks }) {
     </div>
   );
 }
+
+TaskList.propTypes = {
+  loading: PropTypes.bool,
+  tasks: PropTypes.arrayOf(Task.PropTypes.task).isRequired,
+};
+
+TaskList.defaultProps = {
+  loading: false,
+};
