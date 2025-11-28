@@ -65,3 +65,16 @@ export const Default = {
     ],
   },
 };
+
+export const withPinnedTasks = {
+  args: {
+    tasks: [
+      ...Default.args.tasks.slice(0, 5),
+      {
+        id: '1',
+        title: 'Task 6(pinned)',
+        state: 'TASK_PINNED',
+      },
+    ],
+  },
+};
