@@ -3,6 +3,7 @@ import Task from './Task';
 export default {
   Components: Task,
   title: 'Task',
+  tags: ['autodocs'],
 };
 
 export const Default = {
