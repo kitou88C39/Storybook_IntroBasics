@@ -28,3 +28,17 @@ export const Pinned = {
     },
   },
 };
+
+export const Archived = {
+  args: {
+    task: {
+      //   id: '1',
+      //   title: 'test task',
+      //   state: 'TASK_PINNED',
+
+      //スプレッド構文
+      ...Default.args.task,
+      state: 'TASK_ARCHIVED',
+    },
+  },
+};
