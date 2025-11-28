@@ -14,3 +14,13 @@ export const Default = {
     },
   },
 };
+
+export const Pinned = {
+  args: {
+    task: {
+      id: '1',
+      title: 'test task',
+      state: 'TASK_PINNED',
+    },
+  },
+};

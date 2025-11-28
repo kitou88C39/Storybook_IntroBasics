@@ -16,7 +16,7 @@ export default function Task({ task: { id, title, state } }) {
       </label>
 
       {state !== 'TASK_ARCHIVED' && (
-        <button className='pin-button'>
+        <button className='pin-button' id={`pinTask-${id}`}>
           <span className='icon-star'></span>
         </button>
       )}
