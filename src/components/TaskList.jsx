@@ -1,4 +1,17 @@
+import Task from './Task';
+
 export default function TaskList({ Loading, tasks }) {
+  const loadingRow = (
+    <div className='loading-item'>
+      <span className='glow-checkbox'></span>
+      <span className='glow-text'>
+        <span>Loading</span>
+        <span>cool</span>
+        <span>state</span>
+      </span>
+    </div>
+  );
+
   if (Loading) {
     return <div className='list-item'>Loading...</div>;
   }
