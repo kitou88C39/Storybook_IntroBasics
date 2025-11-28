@@ -1,4 +1,5 @@
 import TaskList from './TaskList';
+import * as TaskStories from './Task.stories';
 
 export default {
   Components: TaskList,
@@ -8,49 +9,52 @@ export default {
 export const Default = {
   args: {
     tasks: [
+      //   {
+      //     id: '1',
+      //     title: 'Task 1',
+      //     state: 'TASK_INBOX',
+      //   },
+      //   {
+      //     id: '2',
+      //     title: 'Task 2',
+      //     state: 'TASK_INBOX',
+      //   },
+      //   {
+      //     id: '3',
+      //     title: 'Task 3',
+      //     state: 'TASK_INBOX',
+      //   },
+      //スプレッド構文
       {
+        ...TaskStories.Default.args.task,
         id: '1',
         title: 'Task 1',
-        state: 'TASK_INBOX',
       },
       {
+        ...TaskStories.Default.args.task,
         id: '2',
         title: 'Task 2',
-        state: 'TASK_INBOX',
       },
       {
+        ...TaskStories.Default.args.task,
         id: '3',
         title: 'Task 3',
-        state: 'TASK_INBOX',
+      },
+      {
+        ...TaskStories.Default.args.task,
+        id: '4',
+        title: 'Task 4',
+      },
+      {
+        ...TaskStories.Default.args.task,
+        id: '5',
+        title: 'Task 5',
+      },
+      {
+        ...TaskStories.Default.args.task,
+        id: '6',
+        title: 'Task 6',
       },
     ],
-  },
-};
-
-export const Pinned = {
-  args: {
-    task: {
-      //   id: '1',
-      //   title: 'test task',
-      //   state: 'TASK_PINNED',
-
-      //スプレッド構文
-      ...Default.args.task,
-      state: 'TASK_PINNED',
-    },
-  },
-};
-
-export const Archived = {
-  args: {
-    task: {
-      //   id: '1',
-      //   title: 'test task',
-      //   state: 'TASK_PINNED',
-
-      //スプレッド構文
-      ...Default.args.task,
-      state: 'TASK_ARCHIVED',
-    },
   },
 };
