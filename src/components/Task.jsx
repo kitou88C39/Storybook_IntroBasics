@@ -3,11 +3,15 @@ import PropType from 'prop-types';
 export default function Task({ task: { id, title, state } }) {
   return (
     <div className={`list-item ${state}`}>
-      <label htmlFor='checked' className='checkbox'>
+      <label
+        htmlFor='checked'
+        className='checkbox'
+        aria-label={`archiveTask-${id}`}
+      >
         <input type='checkbox' name='checked' id={`archiveTask-${id}`} />
         <span className='checkbox-custom'></span>
       </label>
-      <label htmlFor='title' className='title'>
+      <label htmlFor='title' className='title' aria-label={title}>
         <input
           type='text'
           value={title}
@@ -18,7 +22,11 @@ export default function Task({ task: { id, title, state } }) {
       </label>
 
       {state !== 'TASK_ARCHIVED' && (
-        <button className='pin-button' id={`pinTask-${id}`}>
+        <button
+          className='pin-button'
+          id={`pinTask-${id}`}
+          aria-label={`pinTask-${id}`}
+        >
           <span className='icon-star'></span>
         </button>
       )}
