@@ -13,7 +13,7 @@ const TaskBoxData = {
   error: null,
 };
 
-const TaskSlice = createSlice({
+export const TaskSlice = createSlice({
   name: 'taskbox',
   initialState: TaskBoxData,
   reducers: {
