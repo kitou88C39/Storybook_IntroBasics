@@ -1,6 +1,6 @@
 import PropType from 'prop-types';
 
-export default function Task({ task: { id, title, state } }) {
+export default function Task({ task: { id, title, state } }, onPinTask) {
   return (
     <div className={`list-item ${state}`}>
       <label
@@ -26,6 +26,7 @@ export default function Task({ task: { id, title, state } }) {
           className='pin-button'
           id={`pinTask-${id}`}
           aria-label={`pinTask-${id}`}
+          onClick={() => onPinTask(id)}
         >
           <span className='icon-star'></span>
         </button>
