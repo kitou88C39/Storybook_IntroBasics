@@ -23,6 +23,10 @@ export default function TaskList() {
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_PINNED' }));
   };
 
+  const archiveTask = (value) => {
+    dispatch(updateTaskState({ id: value, newTaskState: 'TASK_ARCHIVED' }));
+  };
+
   const loadingRow = (
     <div className='loading-item'>
       <span className='glow-checkbox'></span>
@@ -61,7 +65,12 @@ export default function TaskList() {
   return (
     <div className='list-item'>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} onPinTask={(task) => pinTask(task)} />
+        <Task
+          key={task.id}
+          task={task}
+          onPinTask={(task) => pinTask(task)}
+          onArchiveTask={(task) => archiveTask(task)}
+        />
       ))}
     </div>
   );

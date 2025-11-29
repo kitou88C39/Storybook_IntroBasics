@@ -1,6 +1,10 @@
 import PropType from 'prop-types';
 
-export default function Task({ task: { id, title, state } }, onPinTask) {
+export default function Task({
+  task: { id, title, state },
+  onPinTask,
+  onArchiveTask,
+}) {
   return (
     <div className={`list-item ${state}`}>
       <label
@@ -9,7 +13,10 @@ export default function Task({ task: { id, title, state } }, onPinTask) {
         aria-label={`archiveTask-${id}`}
       >
         <input type='checkbox' name='checked' id={`archiveTask-${id}`} />
-        <span className='checkbox-custom'></span>
+        <span
+          className='checkbox-custom'
+          onClick={() => onArchiveTask(id)}
+        ></span>
       </label>
       <label htmlFor='title' className='title' aria-label={title}>
         <input
