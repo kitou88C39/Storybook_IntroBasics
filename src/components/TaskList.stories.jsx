@@ -1,5 +1,8 @@
 import TaskList from './TaskList';
 import * as TaskStories from './Task.stories';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { TaskSlice } from '../lib/store';
 
 export default {
   Components: TaskList,
@@ -11,7 +14,20 @@ export default {
       </div>
     ),
   ],
+  tags: ['autodocs'],
 };
+
+const Mockstore = ({ taskboxState, children }) => (
+  <Provider
+    store={configureStore({
+      reducer: {
+        taskbox: TaskSlice.reducer,
+      },
+    })}
+  >
+    {children}
+  </Provider>
+);
 
 export const Default = {
   args: {
