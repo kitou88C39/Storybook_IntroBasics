@@ -1,4 +1,4 @@
-const { createSlice, configureStore } = require('@reduxjs/toolkit');
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const defaultTasks = [
   { id: '1', title: 'something 1', state: 'TASK_INBOX' },

@@ -29,7 +29,9 @@ const Mockstore = ({ taskboxState, children }) => (
   </Provider>
 );
 
-export const Default = {};
+export const Default = {
+  decorators: [(story) => <Mockstore>{story()}</Mockstore>],
+};
 
 export const withPinnedTasks = {
   args: {
