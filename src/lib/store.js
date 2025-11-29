@@ -1,10 +1,10 @@
 const { createSlice, configureStore } = require('@reduxjs/toolkit');
 
 const defaultTasks = [
-  { id: '1', title: 'something1', state: 'TASK_INBOX' },
-  { id: '2', title: 'something2', state: 'TASK_INBOX' },
-  { id: '3', title: 'something3', state: 'TASK_INBOX' },
-  { id: '4', title: 'something4', state: 'TASK_INBOX' },
+  { id: '1', title: 'something 1', state: 'TASK_INBOX' },
+  { id: '2', title: 'something 2', state: 'TASK_INBOX' },
+  { id: '3', title: 'something 3', state: 'TASK_INBOX' },
+  { id: '4', title: 'something 4', state: 'TASK_INBOX' },
 ];
 
 const TaskBoxData = {
@@ -34,3 +34,5 @@ const store = configureStore({
     taskbox: TaskSlice.reducer,
   },
 });
+
+export default store;
