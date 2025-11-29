@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import Task from './Task';
 import PropType from 'prop-types';
 
-export default function TaskList({ Loading, tasks }) {
+export default function TaskList() {
   const tasks = useSelector((state) => {
     const tasksInOrder = [
       ...state.taskbox.tasks.filter((task) => task.id === 'TASK_PINNED'),
@@ -13,6 +13,8 @@ export default function TaskList({ Loading, tasks }) {
     );
     return filteredTasks;
   });
+
+  const { status } = useSelector((state) => state.taskbox);
 
   const loadingRow = (
     <div className='loading-item'>
@@ -25,7 +27,7 @@ export default function TaskList({ Loading, tasks }) {
     </div>
   );
 
-  if (Loading) {
+  if (status === 'Loading') {
     return (
       <div className='list-items'>
         {loadingRow}
