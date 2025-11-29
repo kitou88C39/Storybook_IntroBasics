@@ -69,7 +69,7 @@ export const withPinnedTasks = {
 };
 
 export const Loading = {
-  ecorators: [
+  decorators: [
     (story) => {
       <Mockstore taskboxState={{ ...MockedState, state: 'loading' }}>
         {story()}
@@ -80,6 +80,10 @@ export const Loading = {
 
 export const Empty = {
   decorators: [
-    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+    (story) => {
+      <Mockstore taskboxState={{ ...MockedState, tasks: [] }}>
+        {story()}
+      </Mockstore>;
+    },
   ],
 };
