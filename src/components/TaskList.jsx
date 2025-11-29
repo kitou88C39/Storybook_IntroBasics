@@ -1,6 +1,7 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Task from './Task';
 import PropType from 'prop-types';
+import { updateTaskState } from '../lib/store';
 
 export default function TaskList() {
   const tasks = useSelector((state) => {
@@ -15,6 +16,12 @@ export default function TaskList() {
   });
 
   const { status } = useSelector((state) => state.taskbox);
+
+  const dispatch = useDispatch();
+
+  const pinTask = (value) => {
+    dispatch(updateTaskState({ id: value, newTaskState: 'TASK_PINNED' }));
+  };
 
   const loadingRow = (
     <div className='loading-item'>
@@ -54,7 +61,7 @@ export default function TaskList() {
   return (
     <div className='list-item'>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <Task key={task.id} task={task} onPinTask={(task) => pinTask(task)} />
       ))}
     </div>
   );
