@@ -51,29 +51,10 @@ export const Default = {
   ],
 };
 
-export const withPinnedTasks = {
-  args: {
-    tasks: [
-      ...Default.args.tasks.slice(0, 5),
-      {
-        id: '6',
-        title: 'Task 6(pinned)',
-        state: 'TASK_PINNED',
-      },
-    ],
-  },
-};
+export const withPinnedTasks = {};
 
-export const Loading = {
-  args: {
-    tasks: [],
-    loading: true,
-  },
-};
+export const Loading = {};
 
 export const Empty = {
-  args: {
-    ...Loading.args,
-    loading: false,
-  },
+  a,
 };
