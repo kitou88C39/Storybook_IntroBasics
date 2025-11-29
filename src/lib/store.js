@@ -1,4 +1,4 @@
-const { createSlice } = require('@reduxjs/toolkit');
+const { createSlice, configureStore } = require('@reduxjs/toolkit');
 
 const defaultTasks = [
   { id: '1', title: 'something1', state: 'TASK_INBOX' },
@@ -24,5 +24,13 @@ const TaskSlice = createSlice({
         state.tasks[tasks].state = newTaskState;
       }
     },
+  },
+});
+
+export const { updateTaskState } = TaskSlice.actions;
+
+const store = configureStore({
+  reducer: {
+    taskbox: TaskSlice.reducer,
   },
 });
