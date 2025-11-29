@@ -51,10 +51,20 @@ export const Default = {
   ],
 };
 
-export const withPinnedTasks = {};
+export const withPinnedTasks = {
+  decorators: [
+    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+  ],
+};
 
-export const Loading = {};
+export const Loading = {
+  decorators: [
+    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+  ],
+};
 
 export const Empty = {
-  a,
+  decorators: [
+    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+  ],
 };
