@@ -59,14 +59,22 @@ export const withPinnedTasks = {
         { id: '4', title: 'Take 6(pinned)', state: 'TASK_PINNED' },
       ];
 
-      return <Mockstore taskboxState={{ MockedState }}>{story()}</Mockstore>;
+      return (
+        <Mockstore taskboxState={{ ...MockedState, tasks: pinnedTasks }}>
+          {story()}
+        </Mockstore>
+      );
     },
   ],
 };
 
 export const Loading = {
-  decorators: [
-    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+  ecorators: [
+    (story) => {
+      <Mockstore taskboxState={{ ...MockedState, state: 'loading' }}>
+        {story()}
+      </Mockstore>;
+    },
   ],
 };
 
