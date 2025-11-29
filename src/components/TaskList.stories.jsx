@@ -53,7 +53,14 @@ export const Default = {
 
 export const withPinnedTasks = {
   decorators: [
-    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
+    (story) => {
+      const pinnedTasks = [
+        ...MockedState.tasks.splice(0, 5),
+        { id: '4', title: 'Take 6(pinned)', state: 'TASK_PINNED' },
+      ];
+
+      return <Mockstore taskboxState={{ MockedState }}>{story()}</Mockstore>;
+    },
   ],
 };
 
