@@ -16,4 +16,13 @@ const TaskBoxData = {
 const TaskSlice = createSlice({
   name: 'taskbox',
   initialState: TaskBoxData,
+  reducers: {
+    updateTaskState: (state, action) => {
+      const { id, newTaskState } = action.payload;
+      const tasks = state.tasks.findIndex((task) => task.id === id);
+      if (tasks >= 0) {
+        state.tasks[tasks].state = newTaskState;
+      }
+    },
+  },
 });
