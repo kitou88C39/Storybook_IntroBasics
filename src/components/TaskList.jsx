@@ -8,6 +8,10 @@ export default function TaskList({ Loading, tasks }) {
       ...state.taskbox.tasks.filter((task) => task.id === 'TASK_PINNED'),
       ...state.taskbox.tasks.filter((task) => task.id !== 'TASK_PINNED'),
     ];
+    const filteredTasks = tasksInOrder.filter(
+      (task) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
+    );
+    return filteredTasks;
   });
 
   const loadingRow = (
