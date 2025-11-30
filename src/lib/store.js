@@ -28,6 +28,8 @@ export const fetchTasks = createAsyncThunk('todos/fetchTodos', async () => {
     title: task.title,
     state: task.completed ? 'TASK_ARCHIVED' : 'TASK_INBOX',
   }));
+
+  return result;
 });
 
 export const TaskSlice = createSlice({
@@ -41,6 +43,27 @@ export const TaskSlice = createSlice({
         state.tasks[tasks].state = newTaskState;
       }
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchTasks.pending, (state) => {
+      state.status = 'loading';
+      state.error = null;
+      state.tasks = [];
+    });
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchTasks.fulfilled, (state) => {
+      state.status = 'succeeded';
+      state.error = null;
+      state.tasks = action.payload;
+    });
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchTasks.rejected, (state) => {
+      state.status = 'failded';
+      state.error = 'Something went wrong';
+      state.tasks = [];
+    });
   },
 });
 
