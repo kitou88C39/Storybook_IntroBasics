@@ -1,6 +1,6 @@
 import TaskList from './TaskList';
 
-export default function IndexScreen() {
+export default function InboxScreen() {
   return (
     <div className='page lists-show'>
       <nav>

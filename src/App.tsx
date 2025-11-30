@@ -1,14 +1,8 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import './App.css';
+import InboxScreen from './components/InboxScreen';
 
 function App() {
-  
-
-  return (
-    
-   
-  );
+  return <InboxScreen />;
 }
 
 export default App;
