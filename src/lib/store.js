@@ -1,4 +1,8 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  configureStore,
+  createAsyncThunk,
+} from '@reduxjs/toolkit';
 
 const defaultTasks = [
   { id: '1', title: 'something 1', state: 'TASK_INBOX' },
@@ -12,6 +16,13 @@ const TaskBoxData = {
   status: 'idle',
   error: null,
 };
+
+export const fetchTasks = createAsyncThunk('todos/fetchTodos', async () => {
+  const response = await fetch(
+    'https://jsonplaceholder.typicode.com/todos?userId=1'
+  );
+  const data = await response.json();
+});
 
 export const TaskSlice = createSlice({
   name: 'taskbox',
