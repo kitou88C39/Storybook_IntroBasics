@@ -52,7 +52,7 @@ export const TaskSlice = createSlice({
     });
   },
   extraReducers(builder) {
-    builder.addCase(fetchTasks.fulfilled, (state) => {
+    builder.addCase(fetchTasks.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.error = null;
       state.tasks = action.payload;
