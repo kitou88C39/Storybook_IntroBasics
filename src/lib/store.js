@@ -4,7 +4,7 @@ import {
   createAsyncThunk,
 } from '@reduxjs/toolkit';
 
-const defaultTasks = [
+export const defaultTasks = [
   { id: '1', title: 'something 1', state: 'TASK_INBOX' },
   { id: '2', title: 'something 2', state: 'TASK_INBOX' },
   { id: '3', title: 'something 3', state: 'TASK_INBOX' },
