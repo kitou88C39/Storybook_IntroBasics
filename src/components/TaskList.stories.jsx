@@ -4,19 +4,6 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { TaskSlice } from '../lib/store';
 
-export default {
-  Components: TaskList,
-  title: 'TaskList',
-  decorators: [
-    (Story) => (
-      <div style={{ padding: '3rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  tags: ['autodocs'],
-};
-
 const MockedState = {
   tasks: [
     { ...TaskStories.Default.args.task, id: '1', title: 'Task 1' },
@@ -28,6 +15,20 @@ const MockedState = {
   ],
   status: 'idle',
   error: null,
+};
+
+export default {
+  Components: TaskList,
+  title: 'TaskList',
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '3rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  tags: ['autodocs'],
+  excludeStories: /,*MockedState$/,
 };
 
 const Mockstore = ({ taskboxState, children }) => (
