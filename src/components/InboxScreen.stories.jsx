@@ -1,3 +1,8 @@
+import {
+  waitFor,
+  waitForElementToBeRemoved,
+  within,
+} from 'storybook/internal/test';
 import store from '../lib/store';
 import TInboxScreen from './InboxScreen';
 import store from './lib/store';
@@ -23,6 +28,10 @@ export const Default = {
         ),
       ],
     },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await waitForElementToBeRemoved(await canvas.findAllByTestId('loading'));
   },
 };
 
