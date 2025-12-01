@@ -1,4 +1,5 @@
 import {
+  fireEvent,
   waitFor,
   waitForElementToBeRemoved,
   within,
@@ -32,6 +33,9 @@ export const Default = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitForElementToBeRemoved(await canvas.findAllByTestId('loading'));
+    await waitFor(async () => {
+      await fireEvent.click(canvas.getAllByText('pinTask-1'));
+    });
   },
 };
 
