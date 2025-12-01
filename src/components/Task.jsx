@@ -7,12 +7,13 @@ export default function Task({
 }) {
   return (
     <div className={`list-item ${state}`}>
-      <label
-        htmlFor='checked'
-        className='checkbox'
-        aria-label={`archiveTask-${id}`}
-      >
-        <input type='checkbox' name='checked' id={`archiveTask-${id}`} />
+      <label htmlFor='checked' className='checkbox'>
+        <input
+          type='checkbox'
+          name='checked'
+          id={`archiveTask-${id}`}
+          aria-label={`archiveTask-${id}`}
+        />
         <span
           className='checkbox-custom'
           onClick={() => onArchiveTask(id)}

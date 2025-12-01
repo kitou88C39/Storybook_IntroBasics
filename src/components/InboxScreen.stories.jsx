@@ -35,6 +35,8 @@ export const Default = {
     await waitForElementToBeRemoved(await canvas.findAllByTestId('loading'));
     await waitFor(async () => {
       await fireEvent.click(canvas.getAllByText('pinTask-1'));
+      await fireEvent.click(canvas.getAllByText('pinTask-3'));
+      await fireEvent.click(canvas.getAllByText('archiveTask-5'));
     });
   },
 };

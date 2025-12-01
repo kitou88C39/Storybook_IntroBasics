@@ -40,7 +40,7 @@ export default function TaskList() {
 
   if (status === 'Loading') {
     return (
-      <div className='list-items' data-testid='loading'>
+      <div className='list-items' data-testid='loading' key={'loading'}>
         {loadingRow}
         {loadingRow}
         {loadingRow}
